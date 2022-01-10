@@ -78,14 +78,14 @@ default['travis_build_environment']['pyenv_revision'] = 'v2.2.2'
 # https://github.com/pyenv/pyenv/tree/master/plugins/python-build/share/python-build
 default['travis_build_environment']['pythons'] = %w(
   2.7.14
-  3.6.3
+  3.7.1
   pypy2.7-5.8.0
   pypy3.5-5.8.0
 )
 
 default['travis_build_environment']['python_aliases'] = {
   '2.7.14' => %w(2.7),
-  '3.6.3' => %w(3.6),
+  '3.7.1' => %w(3.7),
   'pypy2.7-5.8.0' => %w(pypy),
   'pypy3.5-5.8.0' => %w(pypy3),
 }
@@ -93,7 +93,7 @@ default['travis_build_environment']['python_aliases'] = {
 default['travis_build_environment']['pip']['packages'] = {
   'default' => %w(nose pytest mock wheel),
   '2.7' => %w(numpy),
-  '3.6' => %w(numpy),
+  '3.7' => %w(numpy),
 }
 
 default['travis_build_environment']['system_python']['pythons'] = %w(2.7 3.2)
@@ -104,7 +104,7 @@ when 'ubuntu'
   elsif node['lsb']['codename'] == 'xenial'
     default['travis_build_environment']['system_python']['pythons'] = %w(2.7 3.5)
   elsif node['lsb']['codename'] == 'bionic'
-    default['travis_build_environment']['system_python']['pythons'] = %w(2.7 3.6)
+    default['travis_build_environment']['system_python']['pythons'] = %w(2.7 3.7)
   else
     default['travis_build_environment']['system_python']['pythons'] = %w(3.7)
   end
