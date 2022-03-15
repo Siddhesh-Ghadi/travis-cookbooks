@@ -53,5 +53,6 @@ ruby_block 'job_board adjustments mongodb ppc64le' do
   block do
     features = node['travis_packer_templates']['job_board']['features'] - ['mongodb']
     node.override['travis_packer_templates']['job_board']['features'] = features
+    puts features
   end
 end
